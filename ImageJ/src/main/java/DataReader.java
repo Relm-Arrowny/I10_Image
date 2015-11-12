@@ -7,6 +7,7 @@ Data loading is part of the constructor: DataRead(file name, keyword (&END)),
 if no keyword is provided the default "&END" will be used
 
 GetColumn (int column)			Return double array with the entire column data
+GetColumn (String column)		Use the name of the column instead
 GetColData(int column, int row)	Return a data point
 GetColName (int column)			Return a string containing data label
 GetRowSize ()					Return number of row in the data (number of data point)
@@ -98,15 +99,42 @@ public class DataReader {
 	        }
 
 	    }
-
+   
+	// Return the correspondent column number for an given column name
+	public int GetColNum(String phrase){
+		
+		for (int n = 0; n < m_colName.size(); n++){
+			if(phrase.equals(m_colName.get(n))){
+				return n;
+			}
+		}
+		
+		System.out.println("No match for: " +phrase);
+		return -1;
+    	
+    }
+	
 	// Return any column
 	public double [] GetColumn (int column){
-		 double tArray [] = new double [m_dataArrays.get(column).size()];
-		 for(int i = 0; i < m_dataArrays.get(column).size(); ++i) {
-			    tArray[i] =m_dataArrays.get(column).get(i);
+		double tArray [] = new double [m_dataArrays.get(column).size()];
+		try{
+			for(int i = 0; i < m_dataArrays.get(column).size(); ++i) {
+			    tArray[i] = m_dataArrays.get(column).get(i);
 			}
+		
+		
+		}catch(ArithmeticException e){
+			System.out.println("Arithmetic Exception!!");
+		}
+		
 		return tArray;
 	}
+	// Overloaded function to takes String argument
+	public double [] GetColumn (String phrase){
+		 int column = GetColNum(phrase);
+		return GetColumn(column);
+	}
+	
 	
 	// Return a given data point with the data
 	public double GetColData(int column, int row){
@@ -118,6 +146,8 @@ public class DataReader {
 		
 		return m_colName.get(column);
 	}
+	
+	
 	
 	//Get the number of row
 	public int GetRowSize (){
