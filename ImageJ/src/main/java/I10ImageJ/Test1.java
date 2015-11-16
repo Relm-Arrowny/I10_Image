@@ -19,7 +19,6 @@ public class Test1 {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-                ex.setVisible(true);
                 System.out.println("1231");
             }
         });
