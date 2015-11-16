@@ -2,12 +2,13 @@ package I10ImageJ;
 import java.awt.EventQueue;
 import java.io.IOException;
 import GUI.SimpleEx;
+import ij.*;
 
 
 public class Test1 {
 	public static void main(String[] args) throws IOException  {
-
-
+		
+        
         EventQueue.invokeLater(new Runnable() {
         
             @Override
@@ -19,7 +20,7 @@ public class Test1 {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-                System.out.println("1231");
+                ex.setVisible(true);
             }
         });
     	
