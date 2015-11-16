@@ -1,3 +1,4 @@
+package I10ImageJ;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
@@ -35,13 +36,12 @@ public class run{
 		 System.out.println(data.GetImagesList().size());
 		 
 		 Plot plot = new Plot(asciiData.GetColName(0), asciiData.GetColName(0), asciiData.GetColName(0),
-				  asciiData.GetColumn(0), data.GetMean());
-		 plot.setColor(Color.red);
-		 plot.addPoints(asciiData.GetColumn(0), data.GetMax(),1);
-		 plot.addPoints(asciiData.GetColumn(0), data.GetMin(),2);
-		 plot.setColor(Color.blue);
+				  asciiData.GetColumn("dummy"), data.GetMean());
 
-		 plot.show();
+/*		 for (int n = 0; n <asciiData.GetColSize(); n++){
+			 System.out.println(asciiData.GetColName(n));
+		 }
+*/		 plot.show();
 	     //Schedule a job for the event-dispatching thread:
 	     //creating and showing this application's GUI.
 	     javax.swing.SwingUtilities.invokeLater(new Runnable() {

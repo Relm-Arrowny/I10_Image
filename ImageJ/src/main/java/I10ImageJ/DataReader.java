@@ -1,3 +1,4 @@
+package I10ImageJ;
 /*
 Read the data and cut off everything until keyword is reached
 Take the first line break them into scanable and store in an Array: m_colName

@@ -1,3 +1,4 @@
+package I10ImageJ;
 // Take path and scan number return either the folder that contains images or any data file
 public class FileLocation {
 	 private String m_asciiData;

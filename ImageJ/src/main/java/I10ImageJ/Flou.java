@@ -1,3 +1,4 @@
+package I10ImageJ;
 /*x-ray fluorescence Class for area detector
  This class takes a File type for folder location and
  read all the images into memory 
@@ -97,41 +98,7 @@ public class Flou{
 
 		}
 		return min;
-	}
-	
-/*	
-    // plot 1d data ====================================================	
-	// Everything is passed for the plot
-	// This was created for early testing
-	public void Plot1D(String title, String xLabel, String yLabel, double [] x, double []y){
-
-		Plot plot = new Plot(title, xLabel, yLabel, x, y);
-		plot.show();
-
-	}
-	
-	// Only x and y is given
-	public void Plot1D(double [] x, double []y){
-		Plot plot = new Plot("title", "xLabel", "yLabel", x, y);
-		plot.show();
-
-	}
-	
-	// No array is given plotting data stored within the class instance
-	// Plot Mean
-	public void Plot1DMean(){
-		Plot1D("Images Mean", "xLabel", "Mean", GetX(), GetMean());
-
-	}
-	public void Plot1DArea(){
-		Plot1D("Images Mean", "xLabel", "Mean", GetX(), GetArea());
-
-	}//ImageProcessor ip = image.getProcessor();
-    //m_Stack.addSlice(ip);
-	*/
-	
-
-	
+	}	
 }
 
 

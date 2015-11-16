@@ -1,3 +1,4 @@
+package I10ImageJ;
 /*
  * To the extent possible under law, the Fiji developers have waived
  * all copyright and related or neighboring rights to this tutorial code.
