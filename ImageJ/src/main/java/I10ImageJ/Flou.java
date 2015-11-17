@@ -29,11 +29,13 @@ public class Flou{
 	// This will load every images in the folder into the array
 	
 	public void LoadImage(File[] files){
-		
+		int totalNumFile = files.length;
+		int counter = 0;
 		for (File file : files){
+				IJ.showProgress(counter++, totalNumFile);
 				ImagePlus image = IJ.openImage(file.getAbsolutePath());
 				m_Stack.add(image);
-
+				IJ.showStatus("1");
 			}
 		}
 		

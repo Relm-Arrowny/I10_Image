@@ -19,17 +19,7 @@
 
 	<developers>
 		<developer>
-			<id>dscho</id>
-			<name>Johannes Schindelin</name>
-			<email>johannes.schindelin@gmx.de</email>
-			<url>http://loci.wisc.edu/people/johannes-schindelin</url>
-			<organization>UW-Madison LOCI</organization>
-			<organizationUrl>http://loci.wisc.edu/</organizationUrl>
-			<roles>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-			<timezone>-6</timezone>
+
 		</developer>
 	</developers>
 

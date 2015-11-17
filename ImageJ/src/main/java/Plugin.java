@@ -1,13 +1,10 @@
-package I10ImageJ;
-import java.awt.EventQueue;
+import java.awt.*;
 import java.io.IOException;
 import GUI.SimpleEx;
+public class Plugin {
 
-
-public class Test1 {
-	public static void main(String[] args) throws IOException  {
-		
-        
+	void run(java.lang.String arg){
+		   
         EventQueue.invokeLater(new Runnable() {
         
             @Override
@@ -22,9 +19,6 @@ public class Test1 {
                 ex.setVisible(true);
             }
         });
-    	
-    }
-    
-
-
+	}
+	
 }
