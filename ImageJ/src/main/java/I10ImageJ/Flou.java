@@ -1,4 +1,3 @@
-package I10ImageJ;
 /*x-ray fluorescence Class for area detector
  This class takes a File type for folder location and
  read all the images into memory 
@@ -11,10 +10,9 @@ GetMax()				return a double array contain Images maximum intensity
 GetMin()				return a double array contain Images minimum intensity
 GetX()					return a double array increment from 0 to array size
  */
-
+package I10ImageJ;
 import ij.IJ;
 import ij.ImagePlus;
-//import ij.gui.Plot;
 import java.io.File;
 import java.util.ArrayList;
  
