@@ -27,7 +27,6 @@ public class FlouPlot {
 					asciiData.GetColumn(xLabel), data.GetMean());
 	
 			plot.show();
-		
 	}
 
 }

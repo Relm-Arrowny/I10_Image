@@ -3,33 +3,27 @@ import I10ImageJ.*;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
-import java.awt.Container;
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
+
 import java.awt.GridLayout;
 import java.awt.KeyboardFocusManager;
 import java.awt.Panel;
-import java.awt.TextField;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.io.File;
 import java.io.IOException;
 
-import javax.swing.GroupLayout;
-import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import ij.gui.Plot;
-
 public class SimpleEx extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Button m_quit, m_readData, m_showImg;
 	JTextField m_scanNum, m_dataPath, m_colName, m_ImgNum;
 	Panel panelDisplay;

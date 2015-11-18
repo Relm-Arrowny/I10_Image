@@ -44,6 +44,11 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>I10</groupId>
+				<artifactId>I10PlugIn</artifactId>
+				<version>beta_0.0</version>
+			</plugin>
 		</plugins>
 	</build>
 

@@ -1,9 +1,8 @@
 package I10ImageJ;
 import java.awt.EventQueue;
-import java.io.File;
 import java.io.IOException;
 import GUI.SimpleEx;
-import ij.gui.Plot;
+
 
 
 public class Test1 {
@@ -20,6 +19,7 @@ public class Test1 {
 
 		plot.show();
 		*/
+		
         EventQueue.invokeLater(new Runnable() {
         
             @Override
