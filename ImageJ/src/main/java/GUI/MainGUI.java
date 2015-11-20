@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-public class SimpleEx extends JFrame{
+public class MainGUI extends JFrame{
 	/**
 	 * 
 	 */
@@ -30,7 +30,7 @@ public class SimpleEx extends JFrame{
 	Panel panelDisplay;
 	JCheckBox m_xmcd;
 	Flou data;
-	public SimpleEx() throws IOException{
+	public MainGUI() throws IOException{
 		m_quit = new Button("Quit");
 		m_showImg = new Button("Show Image");
 		m_readData = new Button("1D Scan");

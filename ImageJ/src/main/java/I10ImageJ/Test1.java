@@ -1,7 +1,7 @@
 package I10ImageJ;
 import java.awt.EventQueue;
 import java.io.IOException;
-import GUI.SimpleEx;
+import GUI.MainGUI;;
 
 
 
@@ -24,9 +24,9 @@ public class Test1 {
         
             @Override
             public void run() {
-                SimpleEx ex = null;
+                MainGUI ex = null;
 				try {
-					ex = new SimpleEx();
+					ex = new MainGUI();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
