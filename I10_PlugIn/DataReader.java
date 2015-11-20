@@ -1,4 +1,3 @@
-package I10ImageJ;
 /*
 Read the data and cut off everything until keyword is reached
 Take the first line break them into scanable and store in an Array: m_colName
@@ -19,13 +18,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.swing.JOptionPane;
 
 
 public class DataReader {
@@ -89,13 +85,6 @@ public class DataReader {
 	                }
 	            }
 	        }
-            catch (Exception e)
-            {
-				JOptionPane.showMessageDialog(null,"Data not found");
-                System.err.println("Exception while closing bufferedreader " + e.toString());
-                
-            }
-            
 	        finally
 	        {
 	            try
@@ -120,10 +109,8 @@ public class DataReader {
 			}
 		}
 		
-		JOptionPane.showMessageDialog(null,"Incorrect scanable name");
-		throw new EmptyStackException();
-
-		
+		System.out.println("No match for: " +phrase);
+		return -1;
     	
     }
 	
@@ -136,19 +123,18 @@ public class DataReader {
 			}
 		
 		
-		}catch(ArrayIndexOutOfBoundsException e){
-			
-			JOptionPane.showMessageDialog(null,"Incorrect scanable name");
+		}catch(ArithmeticException e){
+			System.out.println("Arithmetic Exception!!");
 		}
 		
 		return tArray;
 	}
-	
 	// Overloaded function to takes String argument
 	public double [] GetColumn (String phrase){
 		 int column = GetColNum(phrase);
 		return GetColumn(column);
 	}
+	
 	
 	// Return a given data point with the data
 	public double GetColData(int column, int row){
@@ -160,7 +146,9 @@ public class DataReader {
 		
 		return m_colName.get(column);
 	}
-		
+	
+	
+	
 	//Get the number of row
 	public int GetRowSize (){
 		

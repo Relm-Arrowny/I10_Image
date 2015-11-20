@@ -1,6 +1,3 @@
-package GUI; 
-import I10ImageJ.*;
-
 import java.awt.BorderLayout;
 import java.awt.Button;
 
@@ -16,7 +13,6 @@ import java.io.IOException;
 
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
@@ -75,20 +71,13 @@ public class SimpleEx extends JFrame{
 			public void actionPerformed(ActionEvent event){
 				if(m_xmcd.isSelected()){
 					String [] splited = m_scanNum.getText().split("\\s+");
-					try{
-						XMDPlot xmcdPlot= new XMDPlot(m_dataPath.getText(), splited[0], m_dataPath.getText(), 
+					XMDPlot xmcdPlot= new XMDPlot(m_dataPath.getText(), splited[0], m_dataPath.getText(), 
 							splited[1], m_colName.getText());
-					}
-					catch(ArrayIndexOutOfBoundsException e){
-						
-						JOptionPane.showMessageDialog(null,"Two scans are required");
-						e.printStackTrace();
-						
-					}
-					
+
 				}
 				else{
 					FlouPlot flouPlot = new FlouPlot(m_dataPath.getText(), m_scanNum.getText(),m_colName.getText());
+			
 				}
 
 			}

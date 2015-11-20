@@ -1,33 +1,24 @@
-package GUI;
 import java.io.File;
 import java.io.IOException;
-
-import javax.swing.JOptionPane;
-
 import java.awt.*;
-import I10ImageJ.DataReader;
-import I10ImageJ.FileLocation;
-import I10ImageJ.XMD;
 import ij.gui.*;
 
 public class XMDPlot{
 	
 	public XMDPlot(String pathP, String scaNumP, String pathN, String scaNumN, String xLabel){
-
+		
 		FileLocation foundP = new FileLocation(pathP , scaNumP);
 		FileLocation foundN = new FileLocation(pathN , scaNumN);
 		DataReader asciiData = null;
-
 		try {
 			asciiData = new DataReader(foundP.GetData());
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null,"Data not found");
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+	
 		File [] fileP = new File(foundP.GetAreaDataFolder()).listFiles();
 		File [] fileN = new File(foundN.GetAreaDataFolder()).listFiles();
-		
 		XMD data = new XMD(fileP, fileN);
 	 
 		Plot plot = new Plot(xLabel, xLabel,"Mean Intensity",
