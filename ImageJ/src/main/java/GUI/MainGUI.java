@@ -40,7 +40,7 @@ public class MainGUI extends JFrame{
 		m_showImg = new Button("Show Image");
 		m_readData = new Button("1D Scan");
 		m_scanNum = new JTextField("301182");//"Scan Number");
-		m_dataPath = new JTextField( "Z://data//2015//si12626-1//"/*"Data Directory"*/);
+		m_dataPath = new JTextField( "Z://data//2015//si12958-1//"/*"Data Directory"*/);
 		m_colName = new JTextField ("th");//X Aixs Scanable Name");
 		m_ImgNum = new JTextField("Image Number");
 		m_xmcd = new JCheckBox("XMCD");
