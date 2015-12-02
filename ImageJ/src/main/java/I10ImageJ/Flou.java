@@ -15,6 +15,7 @@ import ij.IJ;
 import ij.ImagePlus;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EmptyStackException;
 import javax.swing.JOptionPane;
  
@@ -30,6 +31,7 @@ public class Flou{
 	// This will load every images in the folder into the array
 	
 	public void LoadImage(File[] files){
+		Arrays.sort(files);
 
 		for (File file : files){
 
