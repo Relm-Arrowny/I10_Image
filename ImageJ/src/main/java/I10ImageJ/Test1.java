@@ -1,7 +1,8 @@
 package I10ImageJ;
+import GUI.MainGUI;
 import java.awt.EventQueue;
 import java.io.IOException;
-import GUI.MainGUI;;
+
 
 
 

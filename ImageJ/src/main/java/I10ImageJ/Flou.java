@@ -16,7 +16,6 @@ import ij.ImagePlus;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
-
 import javax.swing.JOptionPane;
  
 public class Flou{

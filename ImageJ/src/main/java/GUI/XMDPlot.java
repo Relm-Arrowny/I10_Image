@@ -1,13 +1,14 @@
 package GUI;
+import I10ImageJ.DataReader;
+import I10ImageJ.FileLocation;
+import I10ImageJ.XMD;
+
 import java.io.File;
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
 import java.awt.*;
-import I10ImageJ.DataReader;
-import I10ImageJ.FileLocation;
-import I10ImageJ.XMD;
 import ij.gui.*;
 
 public class XMDPlot{

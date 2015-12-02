@@ -4,15 +4,13 @@
  */
 
 package GUI;
-
-import java.io.File;
-import java.io.IOException;
-
-import javax.swing.JOptionPane;
-
 import I10ImageJ.DataReader;
 import I10ImageJ.FileLocation;
 import I10ImageJ.Flou;
+
+import java.io.File;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 import ij.gui.Plot;
 
 public class FlouPlot {
