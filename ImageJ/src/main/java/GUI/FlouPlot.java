@@ -1,3 +1,8 @@
+/*The main UI will call this function to get Flou plot 
+ * to display on the screen
+ * 
+ */
+
 package GUI;
 
 import java.io.File;

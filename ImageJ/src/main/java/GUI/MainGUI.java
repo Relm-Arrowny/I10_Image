@@ -1,3 +1,7 @@
+	/* This is the main GUI part, it will setup simple buttons and text
+	 * box. 
+	 */
+
 package GUI; 
 import I10ImageJ.*;
 
@@ -21,15 +25,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class MainGUI extends JFrame{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+	// Setting up all the display items
 	Button m_quit, m_readData, m_showImg;
 	JTextField m_scanNum, m_dataPath, m_colName, m_ImgNum;
 	Panel panelDisplay;
 	JCheckBox m_xmcd;
 	Flou data;
+	
+	//Setup the buttons name and start the UI
 	public MainGUI() throws IOException{
 		m_quit = new Button("Quit");
 		m_showImg = new Button("Show Image");
@@ -43,8 +48,11 @@ public class MainGUI extends JFrame{
 		
 		InitUI();
 	}
+	
+	//The Main UI
 	private void InitUI() throws IOException{
 
+		//Set up Keyboarder listener to test when a text box is clicked
 		KeyboardFocusManager.getCurrentKeyboardFocusManager()
 	    .addPropertyChangeListener("permanentFocusOwner", new PropertyChangeListener()
 	{
@@ -64,12 +72,15 @@ public class MainGUI extends JFrame{
 	    	}
 	    }
 	});
+		// Add Quit botton
 		m_quit.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent event){
 				System.exit(0);
 			}
 		});
+		
+		//Add 1d scan button, it will either do xmcd/flou depending on if the xmcd box is chicked
 		m_readData.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent event){
@@ -93,6 +104,7 @@ public class MainGUI extends JFrame{
 
 			}
 		});
+		//Add show image button to show a single image
 		m_showImg.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent event){
@@ -120,7 +132,7 @@ public class MainGUI extends JFrame{
 		setLayout(new BorderLayout());
 		add(panelDisplay, BorderLayout.NORTH);
 		add(panelButtons, BorderLayout.SOUTH);
-		setTitle("Scan: "+ m_scanNum.getText() );
+		setTitle("I10 Area Detector Beta" );
 		setSize(300, 300);
 		setVisible(true);
 		setLocationRelativeTo(null);

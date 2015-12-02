@@ -13,7 +13,7 @@ public class I10_PlugIn implements PlugIn {
 				try {
 					ex = new MainGUI();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 	            ex.setVisible(true);
