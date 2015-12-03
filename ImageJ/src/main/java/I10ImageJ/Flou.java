@@ -13,6 +13,8 @@ GetX()					return a double array increment from 0 to array size
 package I10ImageJ;
 import ij.IJ;
 import ij.ImagePlus;
+import ij.plugin.ImageCalculator;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,10 +25,21 @@ public class Flou{
 	
 	private ArrayList<ImagePlus> m_Stack; 
 	//create dynamic array to hold ImagePlus
+	
 	public Flou(File[] files){
 		m_Stack = new ArrayList<ImagePlus>(); 
-
 		LoadImage(files);
+	}
+	
+	public Flou(File[] files, String backgroud){
+		m_Stack = new ArrayList<ImagePlus>(); 
+		LoadImage(files);
+		ImagePlus image = IJ.openImage(backgroud);
+		for (int i = 0; i<m_Stack.size(); i++){
+			ImageCalculator ic = new ImageCalculator();
+			m_Stack.set(i, ic.run("Subtract create", m_Stack.get(i), image)) ;
+			
+		}
 	}
 	// This will load every images in the folder into the array
 	
@@ -109,6 +122,17 @@ public class Flou{
 
 		}
 		return min;
+	}	
+	public ImagePlus GetImageSum(){
+
+		ImageCalculator ic = new ImageCalculator();
+		ImagePlus imp3 = m_Stack.get(0);
+		for (int i = 1; i<m_Stack.size(); i++){
+			imp3 = ic.run("Subtract create", m_Stack.get(0), imp3);
+		}
+
+		
+		return imp3;
 	}	
 }
 

@@ -10,10 +10,14 @@ GetMax()				return a double array contain Images maximum intensity
 GetMin()				return a double array contain Images minimum intensity
 GetX()					return a double array increment from 0 to array size
  */
+
 import ij.IJ;
 import ij.ImagePlus;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EmptyStackException;
+import javax.swing.JOptionPane;
  
 public class Flou{
 	
@@ -21,18 +25,26 @@ public class Flou{
 	//create dynamic array to hold ImagePlus
 	public Flou(File[] files){
 		m_Stack = new ArrayList<ImagePlus>(); 
+
 		LoadImage(files);
 	}
 	// This will load every images in the folder into the array
 	
 	public void LoadImage(File[] files){
-		int totalNumFile = files.length;
-		int counter = 0;
+		Arrays.sort(files);
+
 		for (File file : files){
-				IJ.showProgress(counter++, totalNumFile);
-				ImagePlus image = IJ.openImage(file.getAbsolutePath());
-				m_Stack.add(image);
-				IJ.showStatus("1");
+
+				if (file.exists()){
+					ImagePlus image = IJ.openImage(file.getAbsolutePath());
+					m_Stack.add(image);
+
+				}
+				else{
+					JOptionPane.showMessageDialog(null,"Data not found");
+					throw new EmptyStackException();
+				}
+
 			}
 		}
 		
